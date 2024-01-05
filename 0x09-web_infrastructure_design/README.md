@@ -41,8 +41,8 @@ In bullet Points
 
 
 
----- PlantUML Code to generate Graphics ----
-
+---- *PlantUML Code to generate Graphics* ----
+```
 @startuml
 actor User
 boundary "User's Device" as userDevice
@@ -70,7 +70,7 @@ appServerRect <-- nginxRect: Return dynamic content
 osRect --> internet: Serve www.foobar.com
 internet --> userDevice: Return webpage
 @enduml
-
+```
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -91,8 +91,8 @@ Security issues such as no firewall and no HTTPS.
 No monitoring to detect and resolve issues proactively.
 
 
----- PlantUML Code to generate Graphics ----
-
+---- *PlantUML Code to generate Graphics* ----
+```
 @startuml
 title Three Server Web Infrastructure for www.foobar.com
 
@@ -145,7 +145,7 @@ LoadBalancer --> internet: Serve www.foobar.com
 internet --> userDevice: Return webpage
 @enduml
 
-
+```
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -168,8 +168,8 @@ Having only one MySQL server capable of accepting writes is an issue because it 
 Having servers with all the same components (database, web server, and application server) might be a problem because it creates a single point of failure and reduces redundancy.
 
 
----- PlantUML Code to generate Graphics ----
-
+---- *PlantUML Code to generate Graphics* ----
+```
 @startuml
 title Three Server Web Infrastructure for www.foobar.com
 
@@ -230,7 +230,7 @@ firewall2 --> osRect2: Secure traffic
 firewall3 --> LoadBalancer: Secure traffic
 
 @enduml
-
+```
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -246,8 +246,8 @@ Python Flask is used as the application server to run the application code that 
 HAproxy is used as the load balancer to distribute incoming network traffic across multiple backend servers in a server pool. It is configured as a cluster with the other load balancer to ensure high availability.
 The web server, application server, and database are split into their own servers to ensure that each component has its own resources and can be scaled independently.
 
----- PlantUML Code to generate Graphics ----
-
+---- *PlantUML Code to generate Graphics* ----
+```
 @startuml
 title Web Infrastructure for www.foobar.com
 
@@ -300,7 +300,7 @@ dbRect3 --> appServerRect2: Return data
 
 @enduml
 
-
+```
 
 
 

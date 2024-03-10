@@ -34,14 +34,14 @@ defaults
         option forwardfor
         option http-server-close
 
-frontend kachkreative_front_end
+frontend kachkreative_frontend
     bind *:80
     bind *:443 ssl crt /etc/haproxy/certs/www.kachktrative.tech.pem
     http-request redirect scheme https unless { ssl_fc }
     http-request set-header X-Forwarded-Proto https
-    default_backend kachkreative_back_end
+    default_backend kachkreative_backend
 
-backend kachkreative_back_end
+backend kachkreative_backend
     balance roundrobin
     server 177379-web-01 100.26.254.67:80 check
     server 177379-web-02 100.25.149.143:80  check

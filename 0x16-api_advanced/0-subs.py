@@ -5,6 +5,7 @@ Dependency:
 """
 import requests
 
+
 def number_of_subscribers(subreddit):
     """Returns number of subreddit subscribers."""
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)

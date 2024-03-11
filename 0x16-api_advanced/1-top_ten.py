@@ -1,24 +1,20 @@
 #!/usr/bin/python3
-'''
-    this module contains the function top_ten
-'''
+"""Displays the total number of subscribers for a subreddit
+Dependency:
+    -> Reddit API (https://www.reddit.com/r/{subreddit}/{listing}.json
+"""
 import requests
-from sys import argv
 
 
 def top_ten(subreddit):
-    '''
-        returns the top ten posts for a given subreddit
-    '''
-    user = {'User-Agent': 'Lizzie'}
-    url = requests.get('https://www.reddit.com/r/{}/hot/.json?limit=10'
-                       .format(subreddit), headers=user).json()
-    try:
-        for post in url.get('data').get('children'):
-            print(post.get('data').get('title'))
-    except Exception:
+    """Returns number of subreddit subscribers."""
+    url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
+    res = requests.get(url, headers={'User-Agent': 'custom'},
+                       allow_redirects=False)
+    if res.status_code == 404:
         print(None)
-
-
-if __name__ == "__main__":
-    top_ten(argv[1])
+    else:
+        posts = res.json().get('data').get('children')
+        for post in posts:
+            title = post.get('data').get('title')
+            print(title)

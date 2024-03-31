@@ -18,4 +18,4 @@ What you should learn from this project:
 ---
 
 ## Author
-* **Onyedinma Onyekachi** - [Gzoref](https://github.com/onyedinma)
+* **Onyedinma Onyekachi** - [Onyedinma](https://github.com/onyedinma)
